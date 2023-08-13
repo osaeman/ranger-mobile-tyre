@@ -184,6 +184,7 @@ a {
 /* Main Header */
 header {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
@@ -196,6 +197,21 @@ header {
   right: 0;
   z-index: 10;
   width: 100%;
+}
+.pre-header {
+  width: 100%;
+  background-color: white;
+  color: var(--primay-color);
+}
+.pre-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 10px 8px;
+  text-align: center;
+}
+.pre-header h2 span {
+  color: var(--seconday-color);
+  font-weight: 800;
 }
 /* Main Haeder For Pages Without Hero Section */
 .header-position-static {
@@ -250,9 +266,8 @@ header {
 }
 .header-logo a img {
   padding: 10px 0;
-  width: 200px;
-  height: 140px;
-  border: 2px solid red;
+  width: 190px;
+  height: 130px;
   object-fit: contain;
   object-position: center;
 }
@@ -1991,6 +2006,10 @@ input:checked + .slider:before {
   background: none;
   color: var(--seconday-color);
 }
+.about-us-section span {
+  color: var(--seconday-color);
+  font-weight: 700;
+}
 /* Saftey Analysis */
 
 .safety-analysis {
@@ -2081,7 +2100,10 @@ input:checked + .slider:before {
   font-size: 1.6rem;
   margin-bottom: 10px;
 }
-
+.tyre-significance span {
+  color: var(--seconday-color);
+  font-weight: 700;
+}
 /*------- Services Page--------- */
 .help-section {
   font-size: 2.4rem;
