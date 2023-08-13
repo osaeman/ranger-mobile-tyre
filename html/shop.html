@@ -94,20 +94,11 @@
         >
       </nav>
     </section>
-    <!-- Hero Section  -->
-    <section class="contact-us-hero-section">
-      <div class="contact-us-hero-image">
-        <img src="../assets/contact-1.jpg" alt="" />
-      </div>
-      <div class="contact-us-hero-text">
-        <h1 class="section-container">
-          Contact
-          <span>Us</span>
-        </h1>
-      </div>
 
+    <!-- Hero Section  -->
+    <section class="hero-section">
       <!-- Main Header -->
-      <header class="">
+      <header class="header-position-static">
         <div class="header-container section-container">
           <div class="header-logo">
             <a href="../index.html">
@@ -134,64 +125,115 @@
         </div>
       </header>
     </section>
+    <!-- Specify Details Section -->
+    <section class="specify-details-section section-container">
+      <h4>Enter details</h4>
+      <h2>Enter details</h2>
 
-    <!-- Contact Us Section -->
-    <section class="contact-us-section section-container">
-      <p class="warning-msg">
-        Ranger Mobile Tyre Fitting, a UK company, functions in the southeastern
-        part of England around the clock, all days of the week. Our dedication
-        lies in performing to our utmost potential.
-      </p>
+      <div class="specify-details-section-gridbox">
+        <div class="specify-details-section-gridbox-left">
+          <div>
+            <h3>Which type of tires are you looking for?</h3>
+            <p>
+              If you don't see your tire listed or need a specific tire, feel
+              free to
+              <span>contact us at 07853363189</span>
+            </p>
+          </div>
+          <div class="specify-detail-forms-container">
+            <form action="" class="specify-details-form">
+              <h5>Specify Tyre Details</h5>
+              <div class="specify-details-form-part-1">
+                <div>
+                  <label for="wheelPosition">Wheel Position</label>
 
-      <div class="contact-us-section-grid">
-        <div class="contact-us-section-form">
-          <h2>Get In Touch</h2>
-          <form action="">
-            <div>
-              <span>
-                <label for="name">Full Name <span>*</span></label>
-                <input type="text" name="name" placeholder="Name" required
-              /></span>
-              <span
-                ><label for="email">Email <span>*</span> </label>
-                <input type="email" name="email" placeholder="Email" required
-              /></span>
-            </div>
-            <label for="number">Phone Number <span>*</span></label>
-            <input type="tel" name="subject" placeholder="Number" id="" />
-            <label for="message">Message</label>
-            <textarea
-              name="message"
-              id=""
-              cols="30"
-              rows="6"
-              placeholder="Message"
-            ></textarea>
-            <br />
-            <button type="submit">Submit</button>
-          </form>
+                  <select name="wheelPosition" id="wheelPosition" required>
+                    <option value="driverSideFront">Driver Side Front</option>
+                    <option value="passengerSideFront">
+                      Passenger Side Front
+                    </option>
+                    <option value="driverSideRear">Driver Side Rear</option>
+                    <option value="passengerSideRear">Driver Side Rear</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="width">Width</label>
+                  <input
+                    type="number"
+                    required
+                    id="width"
+                    name="width"
+                    min="1"
+                  />
+                </div>
+              </div>
+
+              <div class="specify-details-form-part-2">
+                <div>
+                  <label for="profile">Profile</label>
+                  <input
+                    type="number"
+                    required
+                    id="profile"
+                    name="profile"
+                    min="1"
+                  />
+                </div>
+                <div>
+                  <label for="rim">Rim</label>
+                  <input type="number" required id="rim" name="rim" min="1" />
+                </div>
+              </div>
+
+              <div class="specify-details-form-part-3">
+                <div>
+                  <label for="loadIndex">Load Index</label>
+                  <input
+                    type="number"
+                    required
+                    id="loadIndex"
+                    name="loadIndex"
+                    max="126"
+                    min="62"
+                  />
+                </div>
+                <div>
+                  <label for="speedRating">Speed Rating</label>
+
+                  <select name="speedRating" id="speedRating" required>
+                    <option value="H">H</option>
+                    <option value="Q">Q</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                    <option value="H">U</option>
+                    <option value="Q">V</option>
+                    <option value="R">W</option>
+                    <option value="S">Y</option>
+                  </select>
+                </div>
+              </div>
+              <div class="specify-details-form-part-4">
+                <span>Run Flat?</span>
+                <label class="switch" id="flat">
+                  <input type="checkbox" required id="flat" name="flat" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="specify-details-form-btns">
+            <button class="view-price-btn" type="submit">View Prices</button>
+            <button class="add-more-btn" type="button">Add More</button>
+            <button class="remove-tyre-btn" type="button">Remove Tyre</button>
+          </div>
         </div>
-        <div class="contact-us-section-grid-right">
-          <h2>Contact Us</h2>
-          <div>
-            <i class="fas fa-paper-plane"></i>
-            <h3>Email : <span> info@tomsonconstruction.co.uk</span></h3>
-          </div>
-          <div>
-            <i class="fas fa-phone-alt"></i>
-            <h3>Phone : <span> 07853363189</span></h3>
-          </div>
-
-          <div>
-            <i class="fas fa-map-marker-alt"></i>
-            <h3>
-              Address : <span>83 Solway Road North Luton Bedfordshire</span>
-            </h3>
+        <div class="specify-details-section-gridbox-right">
+          <div class="read-tyre-img">
+            <img src="../assets/rs=w_1280.jpeg" alt="" />
           </div>
         </div>
       </div>
     </section>
-
     <!-- Footer -->
     <footer>
       <div class="footer-gridbox">
@@ -265,5 +307,6 @@
       <i class="far fa-long-arrow-alt-up"></i>
     </div>
     <script src="../js/script.js"></script>
+    <script src="../js/shop.js"></script>
   </body>
 </html>
