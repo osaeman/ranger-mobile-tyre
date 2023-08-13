@@ -305,7 +305,24 @@ header {
   background-color: var(--primay-color);
   display: none;
 }
-
+.mobile-pre-header {
+  text-align: center;
+  background-color: var(--grey-shade-light);
+}
+.mobile-header h2 {
+  color: var(--grey-shade-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 10px 8px;
+  text-align: center;
+}
+.mobile-header-logo {
+  width: 140px;
+}
+.mobile-header h2 span {
+  color: var(--seconday-color);
+  font-weight: 800;
+}
 .mobile-main-header {
   display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
