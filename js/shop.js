@@ -1,14 +1,22 @@
-//Appending Tyre section
-const appendingContainer = document.querySelector(
-  ".specify-detail-forms-container"
-);
-const addMoreBtn = document.querySelectorAll(".add-more-btn");
-const removeTyreBtn = document.querySelector(".remove-tyre-btn");
-addMoreBtn.forEach((item, index) => {
-  item.addEventListener("click", clickAppend);
-});
-function clickAppend() {
-  var appendData = `  <form action="" class="specify-details-form">
+document.addEventListener("DOMContentLoaded", function () {
+  var check = "no";
+
+  document.getElementById("flat").addEventListener("change", () => {
+    const flat = document.getElementById("flat"); // Get the checkbox element
+    check = flat.checked ? "yes" : "no"; // Use ternary operator to set check value
+  });
+
+  //Appending Tyre section
+  const appendingContainer = document.querySelector(
+    ".specify-detail-forms-container"
+  );
+  const addMoreBtn = document.querySelectorAll(".add-more-btn");
+  const removeTyreBtn = document.querySelector(".remove-tyre-btn");
+  addMoreBtn.forEach((item, index) => {
+    item.addEventListener("click", clickAppend);
+  });
+  function clickAppend() {
+    var appendData = `  <form  class="specify-details-form">
     <h5>Specify Tyre Details</h5>
     <div class="specify-details-form-part-1">
       <div>
@@ -27,7 +35,7 @@ function clickAppend() {
       <div>
         <label for="width">Width</label>
         <input type="number" required id="width" name="width" />
-        <div class="input-form-custom-button"></div>
+     
       </div>
     </div>
   
@@ -41,7 +49,7 @@ function clickAppend() {
       <div>
         <label for="profile">Profile</label>
         <input type="number" required id="profile" name="profile" />
-        <div class="input-form-custom-button"></div>
+     
       </div>
       <div>
         <label for="loadIndex">Load Index</label>
@@ -53,7 +61,7 @@ function clickAppend() {
           max="126"
           min="62"
         />
-        <div class="input-form-custom-button"></div>
+    
       </div>
     </div>
   
@@ -68,12 +76,12 @@ function clickAppend() {
           max="126"
           min="62"
         />
-        <div class="input-form-custom-button"></div>
+     
       </div>
       <div>
         <label for="speedRating">Speed Rating</label>
   
-        <select name="speedRating" id="speedRating" required>
+        <select name="speedRating" id="speedRating" required >
           <option value="H">H</option>
           <option value="Q">Q</option>
           <option value="R">R</option>
@@ -88,15 +96,48 @@ function clickAppend() {
     </div>
   
   </form>`;
-  removeTyreBtn.style.display = "block";
-  // appendingContainer.appendChild(appendData);
-  appendingContainer.insertAdjacentHTML("beforeend", appendData);
-}
-
-removeTyreBtn.addEventListener("click", () => {
-  var lastChild = appendingContainer.lastElementChild;
-  appendingContainer.removeChild(lastChild);
-  if (appendingContainer.children.length === 1) {
-    removeTyreBtn.style.display = "none";
+    removeTyreBtn.style.display = "block";
+    // appendingContainer.appendChild(appendData);
+    appendingContainer.insertAdjacentHTML("beforeend", appendData);
   }
+
+  removeTyreBtn.addEventListener("click", () => {
+    var lastChild = appendingContainer.lastElementChild;
+    appendingContainer.removeChild(lastChild);
+    if (appendingContainer.children.length === 1) {
+      removeTyreBtn.style.display = "none";
+    }
+  });
+
+  document.querySelector(".view-price-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    var wheelPosition = document.getElementsByName("wheelPosition");
+    var width = document.getElementsByName("width");
+    var profile = document.getElementsByName("profile");
+    var rim = document.getElementsByName("rim");
+    var loadIndex = document.getElementsByName("loadIndex");
+    var speedRating = document.getElementsByName("speedRating");
+    var specify = document.querySelectorAll(".specify-details-form");
+
+    var data;
+    var mainArray = [];
+    specify.forEach((item, index) => {
+      data = [
+        { key: "wheelPosition", value: wheelPosition[index].value },
+        { key: "width", value: width[index].value },
+        { key: "profile", value: profile[index].value },
+        { key: "rim", value: rim[index].value },
+        { key: "loadIndex", value: loadIndex[index].value },
+        { key: "speedRating", value: speedRating[index].value },
+        { key: "flat", value: check },
+      ];
+
+      mainArray.push(data);
+    });
+    var jsonData = JSON.stringify(mainArray);
+
+    localStorage.setItem(`tyreData`, jsonData);
+    window.location.href = "./cart.html";
+  });
 });

@@ -24,11 +24,11 @@
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
 
-    <!-- <link
+    <link
       rel="shortcut icon"
-      href="./assets/tyre logo 3.png"
+      href="../assets/Untitled-1.png"
       type="image/x-icon"
-    /> -->
+    />
 
     <!-- Google Fonts -->
     <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
@@ -142,56 +142,85 @@
       </header>
     </section>
     <section class="cart-section section-container">
-      <h1>Cart</h1>
+      <h4>Cart</h4>
+      <h2>Cart</h2>
       <p>
-        Can't find your tyre listed or require a certain tyre?
-        <span>07853363189, 07442202302</span>
+        Can't find your tyre listed or require a certain tyre? Call us on
+        <b>07853363189, 07442202302</b>
       </p>
 
       <div class="tye-cart-container">
-        <div class="tyre-in-cart">
-          <div class="tyre-in-cart-des">
+        <!-- <div class="tyre-in-cart"> -->
+        <!-- <div class="tyre-in-cart-des">
             <table>
               <tr>
                 <th>Wheel Position :</th>
-                <td>Driver Side Front</td>
+                <td></td>
+                <th>Width :</th>
+                <td></td>
               </tr>
               <tr>
-                <th>Width</th>
-                <td>10</td>
+                <th>Profile :</th>
+                <td></td>
+                <th>Rim :</th>
+                <td></td>
               </tr>
               <tr>
-                <th>Profile</th>
-                <td>10</td>
-              </tr>
-
-              <tr>
-                <th>Rim</th>
-                <td>10</td>
+                <th>Load Index :</th>
+                <td></td>
+                <th>Speed Rating :</th>
+                <td></td>
               </tr>
               <tr>
-                <th>Load Index</th>
-                <td>10</td>
-              </tr>
-              <tr>
-                <th>Speed Rating</th>
-                <td>10</td>
+                <th>Flat :</th>
+                <td></td>
               </tr>
             </table>
           </div>
           <div class="tyre-availbility">
-            <div class="if-avaiable">
+            <div class="if-available">
               <h3>Estimated Price</h3>
-              <span class="price-inc-vat">£ 72</span>
-              <span class="price-exd-vt">(£60.00 ex VAT)</span>
+              <b class="price-inc-vat">&#x20AC; 72.00</b>
+              <span class="price-exd-vt">(&#x20AC; 60.00 ex VAT)</span>
             </div>
+            <div class="if-not-available">
+              Sorry, Tyre with such description is not available.
+            </div>
+          </div> -->
+        <!-- </div> -->
+      </div>
+      <div class="cart-total">
+        <div class="call-out-charges">
+          <div>
+            <h3>Call Out Charges</h3>
+            <span>£75 (plus VAT) between 08:30 and 16:30</span>
+          </div>
+
+          <div>
+            <b class="price-inc-vat">&#x20AC; 72.00</b>
+            <span class="price-exd-vt">(&#x20AC; 60.00 ex VAT)</span>
           </div>
         </div>
-
-        <div class="cart-total">
-          <div class="call-out-charges"></div>
-          <div class="total-charges"></div>
+        <div class="total-charges">
+          <div><h3>Total Estimate</h3></div>
+          <div>
+            <b class="price-inc-vat">&#x20AC; 72.00</b>
+            <span class="price-exd-vt">(&#x20AC; 60.00 ex VAT)</span>
+          </div>
         </div>
+      </div>
+
+      <p class="timing-msg">
+        The 'call out charge' represents a 'daytime' rate, which is typically
+        8:30am to 4:30pm Monday to Friday, excluding bank holidays. Mobile tyre
+        fitting outside the daytime rate is charged at £162.00 (£135.00 ex-VAT)
+      </p>
+
+      <div class="other-details-form-btns">
+        <button><a href="./shop.html">Return</a></button>
+        <button type="button">
+          <a href="./location.html">Confirm</a>
+        </button>
       </div>
     </section>
     <!-- Footer -->
@@ -267,5 +296,101 @@
       <i class="far fa-long-arrow-alt-up"></i>
     </div>
     <script src="../js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // This code will execute when the DOM content is fully loaded
+
+        var tyreData = JSON.parse(localStorage.getItem("tyreData"));
+        if (tyreData === null) {
+          window.location.href = "../index.html";
+        }
+
+        var appendingTyreContainer = document.querySelector(
+          ".tye-cart-container"
+        );
+        var total = 73;
+        var cartTotal = document.querySelector(".cart-total");
+        var callOutCharges = 73;
+        var jsonData = localStorage.getItem("tyreData");
+        var data = JSON.parse(jsonData);
+        var appendTyreData;
+
+        tyreData.forEach((element) => {
+          appendTyreData = `
+          <div class="tyre-in-cart">
+          <div class="tyre-in-cart-des">
+          <table>
+              <tr>
+                <th>Wheel Position :</th>
+                <td>${element[0].value}</td>
+                <th>Width :</th>
+                <td>${element[1].value}</td>
+              </tr>
+              <tr>
+                <th>Profile :</th>
+                <td>${element[2].value}</td>
+                <th>Rim :</th>
+                <td>${element[3].value}</td>
+              </tr>
+              <tr>
+                <th>Load Index :</th>
+                <td>${element[4].value}</td>
+                <th>Speed Rating :</th>
+                <td>${element[5].value}</td>
+              </tr>
+              <tr>
+                <th>Flat :</th>
+                <td>${element[6].value}</td>
+              </tr>
+            </table>
+            
+            </div>
+            <div class="tyre-availbility">
+            <div class="if-available">
+              <h3>Estimated Price</h3>
+              <b class="price-inc-vat">&#x20AC; 72.00</b>
+              <span class="price-exd-vt">(&#x20AC; 60.00 ex VAT)</span>
+            </div>
+            <div class="if-not-available">
+              Sorry, Tyre with such description is not available.
+            </div>
+          </div>
+          </div>`;
+
+          appendingTyreContainer.insertAdjacentHTML(
+            "beforeend",
+            appendTyreData
+          );
+        });
+
+        var appendTotalPrice = `     <div class="call-out-charges">
+          <div>
+            <h3>Call Out Charges</h3>
+            <span>£75 (plus VAT) between 08:30 and 16:30</span>
+          </div>
+
+          <div>
+            <b class="price-inc-vat">&#x20AC; ${callOutCharges}</b>
+            <span class="price-exd-vt">(&#x20AC; ${
+              callOutCharges - 13
+            } ex VAT)</span>
+          </div>
+        </div>
+        <div class="total-charges">
+          <div><h3>Total Estimate</h3></div>
+          <div>
+            <b class="price-inc-vat">&#x20AC; ${total}</b>
+            <span class="price-exd-vt">(&#x20AC; ${total - 13} ex VAT)</span>
+          </div>
+        </div>`;
+
+        cartTotal.innerHTML = appendTotalPrice;
+        var totalData = JSON.stringify(total);
+        console.log(total);
+        console.log(totalData);
+        // Store the data in local storage
+        localStorage.setItem("total", totalData);
+      });
+    </script>
   </body>
 </html>

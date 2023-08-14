@@ -24,11 +24,11 @@
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
 
-    <!-- <link
+    <link
       rel="shortcut icon"
-      href="./assets/tyre logo 3.png"
+      href="../assets/Untitled-1.png"
       type="image/x-icon"
-    /> -->
+    />
 
     <!-- Google Fonts -->
     <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
@@ -157,19 +157,21 @@
             </p>
           </div>
           <div class="specify-detail-forms-container">
-            <form action="" class="specify-details-form">
+            <form id="tyre-form" class="specify-details-form">
               <h5>Specify Tyre Details</h5>
               <div class="specify-details-form-part-1">
                 <div>
                   <label for="wheelPosition">Wheel Position</label>
 
                   <select name="wheelPosition" id="wheelPosition" required>
-                    <option value="driverSideFront">Driver Side Front</option>
-                    <option value="passengerSideFront">
+                    <option value="Driver Side Front">Driver Side Front</option>
+                    <option value="Passenger Side Front">
                       Passenger Side Front
                     </option>
-                    <option value="driverSideRear">Driver Side Rear</option>
-                    <option value="passengerSideRear">Driver Side Rear</option>
+                    <option value="Driver Side Rear">Driver Side Rear</option>
+                    <option value="Passenger Side Rear">
+                      Passenger Side Rear
+                    </option>
                   </select>
                 </div>
                 <div>
@@ -230,7 +232,7 @@
               </div>
               <div class="specify-details-form-part-4">
                 <span>Run Flat?</span>
-                <label class="switch" id="flat">
+                <label class="switch" for="flat">
                   <input type="checkbox" required id="flat" name="flat" />
                   <span class="slider round"></span>
                 </label>
@@ -239,7 +241,7 @@
           </div>
           <div class="specify-details-form-btns">
             <button class="view-price-btn">
-              <a href="./location.html"> View Prices</a>
+              <a> View Prices</a>
             </button>
             <button class="add-more-btn" type="button">Add More</button>
             <button class="remove-tyre-btn" type="button">Remove Tyre</button>

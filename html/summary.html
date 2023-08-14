@@ -24,11 +24,11 @@
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
 
-    <!-- <link
+    <link
       rel="shortcut icon"
-      href="./assets/tyre logo 3.png"
+      href="../assets/Untitled-1.png"
       type="image/x-icon"
-    /> -->
+    />
 
     <!-- Google Fonts -->
     <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
@@ -170,30 +170,30 @@
             <table>
               <tr>
                 <th>Driver Name :</th>
-                <td>Maria Anders</td>
+                <td></td>
               </tr>
 
               <tr>
                 <th>Driver Mobile Number :</th>
-                <td>Maria Anders</td>
+                <td></td>
               </tr>
 
               <tr>
                 <th>Driver E-mail Address :</th>
-                <td>Maria Anders</td>
+                <td></td>
               </tr>
 
               <tr>
                 <th>Driver Location :</th>
-                <td>Maria Anders</td>
+                <td></td>
               </tr>
               <tr>
                 <th>Vehicle Model :</th>
-                <td>Maria Anders</td>
+                <td></td>
               </tr>
               <tr>
                 <th>Vehicle Registration :</th>
-                <td>Maria Anders</td>
+                <td></td>
               </tr>
             </table>
           </div>
@@ -201,42 +201,8 @@
           <div class="tyre-info-table">
             <table>
               <tr>
-                <th>Tyre : 1</th>
-                <td>
-                  <table>
-                    <tr>
-                      <th>Wheel Position :</th>
-                      <td>Driver Side Front</td>
-                    </tr>
-                    <tr>
-                      <th>Width :</th>
-                      <td>11</td>
-                    </tr>
-                    <tr>
-                      <th>Profile :</th>
-                      <td>11</td>
-                    </tr>
-                    <tr>
-                      <th>Rim :</th>
-                      <td>11</td>
-                    </tr>
-
-                    <tr>
-                      <th>Runflat :</th>
-                      <td>No</td>
-                    </tr>
-
-                    <tr>
-                      <th>Speed Rating :</th>
-                      <td>11</td>
-                    </tr>
-
-                    <tr>
-                      <th>Load Index :</th>
-                      <td>11</td>
-                    </tr>
-                  </table>
-                </td>
+                <th>Tyre Quantity :</th>
+                <td></td>
               </tr>
             </table>
           </div>
@@ -254,8 +220,8 @@
               <tr>
                 <th>Total:</th>
                 <td>
-                  £ 162.00
-                  <p>(£ 135.00 ex VAT)</p>
+                  £
+                  <p></p>
                 </td>
               </tr>
             </table>
@@ -343,5 +309,72 @@
       <i class="far fa-long-arrow-alt-up"></i>
     </div>
     <script src="../js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var vehicleData = JSON.parse(localStorage.getItem("vehicleData"));
+
+        if (vehicleData === null) {
+          window.location.href = "../index.html";
+        }
+
+        const personalInfoTable = document.querySelector(
+          ".personal-info-table"
+        );
+        const tyreInfoTable = document.querySelector(".tyre-info-table");
+        const totalTable = document.querySelector(".total-table");
+        var tyreData = JSON.parse(localStorage.getItem("tyreData"));
+        var locationData = JSON.parse(localStorage.getItem("locationData"));
+
+        var total = JSON.parse(localStorage.getItem("total"));
+
+        var appendLocationData = `<table>
+              <tr>
+                <th>Driver Name :</th>
+                <td>${locationData[0].value}</td>
+              </tr>
+
+              <tr>
+                <th>Driver Mobile Number :</th>
+                <td>${locationData[1].value}</td>
+              </tr>
+
+              <tr>
+                <th>Driver E-mail Address :</th>
+                <td>${locationData[2].value}</td>
+              </tr>
+
+              <tr>
+                <th>Driver Location :</th>
+                <td>${locationData[3].value}</td>
+              </tr>
+              <tr>
+                <th>Vehicle Model :</th>
+                <td>${vehicleData[0].value}</td>
+              </tr>
+              <tr>
+                <th>Vehicle Registration :</th>
+                <td>${vehicleData[1].value}</td>
+              </tr>
+            </table>`;
+        var appendTotalData = `<table>
+              <tr>
+                <th>Total:</th>
+                <td>
+                  £ ${total}
+                  <p>(60 £ ex VAT)</p>
+                </td>
+              </tr>
+            </table>
+        `;
+
+        tyreInfoTable.innerHTML = `<table>
+  <tr><th>Tyre Quantity :</th>
+    <td>${tyreData.length}</td></tr>
+
+</table>`;
+        personalInfoTable.innerHTML = appendLocationData;
+        totalTable.innerHTML = appendTotalData;
+      });
+    </script>
   </body>
 </html>

@@ -24,11 +24,11 @@
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
 
-    <!-- <link
+    <link
       rel="shortcut icon"
-      href="./assets/tyre logo 3.png"
+      href="../assets/Untitled-1.png"
       type="image/x-icon"
-    /> -->
+    />
 
     <!-- Google Fonts -->
     <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
@@ -164,19 +164,25 @@
         </div>
 
         <div class="other-details-form">
-          <div>
-            <label for="">Vehicle Model</label>
-            <input type="text" required />
-          </div>
-          <div>
-            <label for="">Vehicle Registration</label>
-            <input type="number" required />
-          </div>
+          <form id="vehicle-form">
+            <div>
+              <label for="vmodel">Vehicle Model</label>
+              <input type="text" id="vmodel" name="vmodel" required />
+            </div>
+            <div>
+              <label for="vreg">Vehicle Registration</label>
+              <input type="text" id="vreg" name="vreg" required />
+            </div>
 
-          <div class="other-details-form-btns">
-            <button type="button"><a href="./location.html">Return</a></button>
-            <button type="button"><a href="./summary.html">Proceed</a></button>
-          </div>
+            <div class="other-details-form-btns">
+              <button type="button">
+                <a href="./location.html">Return</a>
+              </button>
+              <button type="submit">
+                <a>Proceed</a>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -252,5 +258,31 @@
       <i class="far fa-long-arrow-alt-up"></i>
     </div>
     <script src="../js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var locationData = JSON.parse(localStorage.getItem("locationData"));
+        if (locationData === null) {
+          window.location.href = "../index.html";
+        }
+      });
+
+      document
+        .getElementById("vehicle-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          var vmodel = document.getElementById("vmodel").value;
+          var vreg = document.getElementById("vreg").value;
+          var data = [
+            { key: "vmodel", value: vmodel },
+            { key: "vreg", value: vreg },
+          ];
+
+          var jsonData = JSON.stringify(data);
+          // Store the data in local storage
+          localStorage.setItem("vehicleData", jsonData);
+          window.location.href = "./summary.html";
+        });
+    </script>
   </body>
 </html>

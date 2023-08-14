@@ -24,11 +24,11 @@
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
 
-    <!-- <link
+    <link
       rel="shortcut icon"
-      href="./assets/tyre logo 3.png"
+      href="../assets/Untitled-1.png"
       type="image/x-icon"
-    /> -->
+    />
 
     <!-- Google Fonts -->
     <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
@@ -162,28 +162,32 @@
         </div>
 
         <div class="other-details-form">
-          <div>
-            <label for="">Driver Name</label>
-            <input type="text" required />
-          </div>
-          <div>
-            <label for="">Driver Mobile Number</label>
-            <input type="number" required />
-          </div>
-          <div>
-            <label for="">Driver Email</label>
-            <input type="email" required />
-          </div>
-          <div>
-            <label for="">Driver Loaction</label>
-            <input type="text" required />
-          </div>
-          <div class="other-details-form-btns">
-            <button type="button">
-              <a href="./shop.html"> Return</a>
-            </button>
-            <button type="button"><a href="./vehicle.html">Proceed</a></button>
-          </div>
+          <form id="location-form">
+            <div>
+              <label for="dname">Driver Name</label>
+              <input type="text" name="dname" id="dname" required />
+            </div>
+            <div>
+              <label for="dnumber">Driver Mobile Number</label>
+              <input type="tel" name="dnumber" id="dnumber" required />
+            </div>
+            <div>
+              <label for="demail">Driver Email</label>
+              <input type="email" name="demail" id="demail" required />
+            </div>
+            <div>
+              <label for="dlocation">Driver Loaction</label>
+              <input type="text" name="dlocation" id="dlocation" required />
+            </div>
+            <div class="other-details-form-btns">
+              <button type="button">
+                <a href="./shop.html"> Return</a>
+              </button>
+              <button type="submit">
+                <a>Proceed</a>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -260,5 +264,35 @@
       <i class="far fa-long-arrow-alt-up"></i>
     </div>
     <script src="../js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var tyreData = JSON.parse(localStorage.getItem("tyreData"));
+        if (tyreData === null) {
+          window.location.href = "../index.html";
+        }
+      });
+
+      document
+        .getElementById("location-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          var dname = document.getElementById("dname").value;
+          var demail = document.getElementById("demail").value;
+          var dnumber = document.getElementById("dnumber").value;
+          var dlocation = document.getElementById("dlocation").value;
+
+          var data = [
+            { key: "dname", value: dname },
+            { key: "dnumber", value: dnumber },
+            { key: "demail", value: demail },
+            { key: "dlocation", value: dlocation },
+          ];
+
+          var jsonData = JSON.stringify(data);
+          // Store the data in local storage
+          localStorage.setItem("locationData", jsonData);
+          window.location.href = "./vehicle.html";
+        });
+    </script>
   </body>
 </html>

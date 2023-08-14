@@ -24,11 +24,11 @@
     <meta name="google" content="nositelinkssearchbox" />
     <meta name="google" content="notranslate" />
 
-    <!-- <link
+    <link
       rel="shortcut icon"
-      href="./assets/tyre logo 3.png"
+      href="./assets/Untitled-1.png"
       type="image/x-icon"
-    /> -->
+    />
 
     <!-- Google Fonts -->
     <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
@@ -186,8 +186,8 @@
 
           <div class="services-cards-slide">
             <p>
-              The industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type.
+              We maintain a group of skilled technicians who are consistently
+              prepared to address any urgent situations.
             </p>
             <i class="fal fa-sort-down"></i>
           </div>
@@ -200,8 +200,8 @@
 
           <div class="services-cards-slide">
             <p>
-              The industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type.
+              Our mobile unit remains highly responsive and supportive during
+              critical times of necessity.
             </p>
             <i class="fal fa-sort-down"></i>
           </div>
@@ -214,8 +214,8 @@
 
           <div class="services-cards-slide">
             <p>
-              The industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type.
+              Drivers won't face any issues with on-the-spot replacements
+              anymore.
             </p>
             <i class="fal fa-sort-down"></i>
           </div>
@@ -228,7 +228,7 @@
       <h2>lets get started</h2>
       <div>
         <h3>Give primary details.</h3>
-        <form action="/">
+        <form>
           <div>
             <span class="input_labels"
               >What type of vehicle do you possess?</span
@@ -236,7 +236,7 @@
 
             <div class="select-box">
               <div class="options-container">
-                <div class="option" data-empid="1">
+                <div class="option">
                   <input
                     type="radio"
                     class="radio"
@@ -244,21 +244,21 @@
                     name="type"
                     required
                   />
-                  <label for="car">Car</label>
+                  <label for="car" data-empid="1">Car</label>
                 </div>
-                <div class="option" data-empid="1">
+                <div class="option">
                   <input type="radio" class="radio" id="van" name="type" />
-                  <label for="van">Van</label>
+                  <label for="van" data-empid="1">Van</label>
                 </div>
 
-                <div class="option" data-empid="1">
+                <div class="option">
                   <input
                     type="radio"
                     class="radio"
                     id="fourwheel"
                     name="type"
                   />
-                  <label for="fourwheel">4*4</label>
+                  <label for="fourwheel" data-empid="1">4*4</label>
                 </div>
               </div>
 
@@ -273,7 +273,7 @@
 
             <div class="select-box">
               <div class="options-container">
-                <div class="option" data-empid="2">
+                <div class="option">
                   <input
                     type="radio"
                     class="radio"
@@ -281,26 +281,26 @@
                     name="afford"
                     required
                   />
-                  <label for="budget">Budget</label>
+                  <label for="budget" data-empid="2">Budget</label>
                 </div>
-                <div class="option" data-empid="2">
+                <div class="option">
                   <input
                     type="radio"
                     class="radio"
                     id="midrange"
                     name="afford"
                   />
-                  <label for="midrange">Midrange</label>
+                  <label for="midrange" data-empid="2">Midrange</label>
                 </div>
 
-                <div class="option" data-empid="2">
+                <div class="option">
                   <input
                     type="radio"
                     class="radio"
                     id="premium"
                     name="afford"
                   />
-                  <label for="premium">Premium</label>
+                  <label for="premium" data-empid="2">Premium</label>
                 </div>
               </div>
 
@@ -506,7 +506,7 @@
 
       optionsList.forEach((o) => {
         o.addEventListener("click", (e) => {
-          var dataid = e.target.getAttribute("data-empid");
+          const dataid = e.target.getAttribute("data-empid");
           console.log(dataid);
           if (parseInt(dataid) === 1) {
             selected[0].innerHTML = o.querySelector("label").innerHTML;
