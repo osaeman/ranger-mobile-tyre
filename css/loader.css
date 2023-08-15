@@ -17,7 +17,6 @@
   align-items: center;
   padding: 0px;
   margin: 0px;
-  animation: fadeOut 2000ms ease-in-out 1;
 }
 
 .loader {
@@ -60,23 +59,7 @@
   -webkit-animation: anime3 4s 0s forwards ease-in-out infinite;
   animation: anime3 4s 0s forwards ease-in-out infinite;
 }
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 0.8;
-  }
-  95% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
+
 @-webkit-keyframes anime1 {
   0% {
     width: 112px;

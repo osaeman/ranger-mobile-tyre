@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
   setTimeout(function () {
     document.querySelector(".loader-wrapper").style.display = "none";
     document.querySelector(".body-loader").style.overflow = "auto";
-  }, 2000); // 1000ms = 1 second
+  }, 1500); // 1000ms = 1 second
 });
 
 // Scroll to top
