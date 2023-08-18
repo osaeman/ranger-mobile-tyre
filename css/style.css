@@ -412,6 +412,9 @@ button.hamburger-menu {
   transition: transform 0.4s ease-in-out;
   border-right: 1px solid var(--grey-shade-dark);
 }
+.active-mob-nav-link {
+  color: var(--seconday-color) !important;
+}
 .hamburger-slider-show {
   transition: transform 0.4s ease-in-out;
   transform: translateX(0);
@@ -1909,14 +1912,6 @@ input:checked + .slider:before {
   font-size: 1.7rem;
 }
 
-/* .summary-section div table tr td table th {
-  width: 150px;
-  text-align: left;
-  display: block;
-  padding: 5px 0;
-  font-size: 1.7rem;
-} */
-
 /* Gallery Page */
 .Gallery-section {
   margin: 60px auto;
@@ -2249,7 +2244,7 @@ input:checked + .slider:before {
   justify-content: space-between;
   align-items: center;
   width: 80%;
-  margin: 0 auto 30px 0;
+  margin: 0 auto 30px auto;
   border-radius: 5px;
 }
 .tyre-in-cart-des {

@@ -88,16 +88,13 @@
 
       <nav>
         <span> <a class="mobile-nav-links" href="../index.html">Home</a></span>
-        <span>
-          <a href="./services.html" class="mobile-nav-sub-menu mobile-nav-links"
-            >Services
-          </a>
-        </span>
         <span> <a class="mobile-nav-links" href="./about.html">About</a></span>
         <span>
-          <a href="./gallery.html" class="mobile-nav-sub-menu mobile-nav-links"
-            >Gallery
-          </a>
+          <a href="./services.html" class="mobile-nav-links">Services </a>
+        </span>
+
+        <span>
+          <a href="./gallery.html" class="mobile-nav-links">Gallery </a>
         </span>
         <span>
           <a class="mobile-nav-links" href="./contact.html">Contact</a></span
@@ -122,11 +119,7 @@
             </a>
           </div>
           <nav class="navbar-desktop">
-            <span>
-              <a class="nav-links active-nav-link" href="../index.html"
-                >Home</a
-              ></span
-            >
+            <span> <a class="nav-links" href="../index.html">Home</a></span>
             <span>
               <a href="./about.html" class="nav-links">About </a>
             </span>
@@ -180,8 +173,8 @@
           <div class="tyre-availbility">
             <div class="if-available">
               <h3>Estimated Price</h3>
-              <b class="price-inc-vat">&#x20AC; 72.00</b>
-              <span class="price-exd-vt">(&#x20AC; 60.00 ex VAT)</span>
+              <b class="price-inc-vat">&#163; 72.00</b>
+              <span class="price-exd-vt">(&#163; 60.00 ex VAT)</span>
             </div>
             <div class="if-not-available">
               Sorry, Tyre with such description is not available.
@@ -193,19 +186,19 @@
         <div class="call-out-charges">
           <div>
             <h3>Call Out Charges</h3>
-            <span>£75 (plus VAT) between 08:30 and 16:30</span>
+            <span>&#163; 75 (Plus VAT) between 08:30 am and 16:30 pm</span>
           </div>
 
           <div>
-            <b class="price-inc-vat">&#x20AC; 72.00</b>
-            <span class="price-exd-vt">(&#x20AC; 60.00 ex VAT)</span>
+            <b class="price-inc-vat">&#163; 72.00</b>
+            <span class="price-exd-vt">(&#163; 60.00 ex VAT)</span>
           </div>
         </div>
         <div class="total-charges">
           <div><h3>Total Estimate</h3></div>
           <div>
-            <b class="price-inc-vat">&#x20AC; 72.00</b>
-            <span class="price-exd-vt">(&#x20AC; 60.00 ex VAT)</span>
+            <b class="price-inc-vat">&#163; 72.00</b>
+            <span class="price-exd-vt">(&#163; 60.00 ex VAT)</span>
           </div>
         </div>
       </div>
@@ -266,8 +259,8 @@
           <h2>Quick Links</h2>
           <nav>
             <a href="../index.html">Home</a>
-            <a href="./services.html">Services</a>
             <a href="./about.html">About</a>
+            <a href="./services.html">Services</a>
             <a href="./gallery.html">Gallery</a>
             <a href="./contact.html">Contact</a>
           </nav>
@@ -348,8 +341,8 @@
             <div class="tyre-availbility">
             <div class="if-available">
               <h3>Estimated Price</h3>
-              <b class="price-inc-vat">&#x20AC; 72.00</b>
-              <span class="price-exd-vt">(&#x20AC; 60.00 ex VAT)</span>
+              <b class="price-inc-vat">&#163; 72.00</b>
+              <span class="price-exd-vt">(&#163; 60.00 ex VAT)</span>
             </div>
             <div class="if-not-available">
               Sorry, Tyre with such description is not available.
@@ -366,12 +359,12 @@
         var appendTotalPrice = `     <div class="call-out-charges">
           <div>
             <h3>Call Out Charges</h3>
-            <span>£75 (plus VAT) between 08:30 and 16:30</span>
+            <span>£75 (plus VAT) between 08:30 am and 16:30 pm</span>
           </div>
 
           <div>
-            <b class="price-inc-vat">&#x20AC; ${callOutCharges}</b>
-            <span class="price-exd-vt">(&#x20AC; ${
+            <b class="price-inc-vat">&#163; ${callOutCharges}</b>
+            <span class="price-exd-vt">(&#163; ${
               callOutCharges - 13
             } ex VAT)</span>
           </div>
@@ -379,8 +372,8 @@
         <div class="total-charges">
           <div><h3>Total Estimate</h3></div>
           <div>
-            <b class="price-inc-vat">&#x20AC; ${total}</b>
-            <span class="price-exd-vt">(&#x20AC; ${total - 13} ex VAT)</span>
+            <b class="price-inc-vat">&#163; ${total}</b>
+            <span class="price-exd-vt">(&#163; ${total - 13} ex VAT)</span>
           </div>
         </div>`;
 
