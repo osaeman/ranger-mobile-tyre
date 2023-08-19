@@ -33,6 +33,9 @@
   .services-offering-flexbox {
     column-gap: 25px;
   }
+  .services-cards-slide {
+    padding: 30px 22px 13px 22px;
+  }
   .services-card-front {
     padding: 22px 22px;
   }
@@ -149,6 +152,10 @@
     z-index: 5;
     height: max-content;
     padding: 20px 30px 20px 30px;
+    transition: none;
+  }
+  .services-cards:hover .services-cards-slide {
+    transform: translateY(0);
     transition: none;
   }
   .services-cards-slide i {
@@ -328,6 +335,9 @@
     font-size: 1.4rem;
     font-weight: 400;
     transition: none;
+  }
+  .services-offering-flexbox {
+    row-gap: 150px;
   }
   .steps-getting-back-section-grid {
     grid-template-columns: repeat(1, 1fr);

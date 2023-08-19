@@ -111,11 +111,17 @@ a {
   -op-animation-name: SLideInText;
   -webkit-animation-name: SLideInText;
   animation-name: SLideInText;
-  -ms-animation-duration: 1500ms;
-  -moz-animation-duration: 1500ms;
-  -op-animation-duration: 1500ms;
-  -webkit-animation-duration: 1500ms;
-  animation-duration: 1500ms;
+  animation-delay: 1ms;
+  -webkit-animation-delay: 1ms;
+  -ms-animation-delay: 1ms;
+  -moz-animation-delay: 1ms;
+  -op-animation-delay: 1ms;
+  -webkit-animation-delay: 900ms;
+  -ms-animation-duration: 900ms;
+  -moz-animation-duration: 900ms;
+  -op-animation-duration: 900ms;
+  -webkit-animation-duration: 900ms;
+  animation-duration: 900ms;
   -ms-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
   -op-animation-timing-function: linear;
@@ -158,25 +164,20 @@ a {
   background-color: var(--seconday-color);
   padding: 6px 8px;
 }
-.hero-text button {
-  outline: none;
-  border: none;
-  background: none;
+.hero-text .response-time {
   margin: 30px 0;
-  display: block;
-}
-.hero-text button a {
-  display: block;
+  display: inline;
   color: #fff;
   background-color: var(--seconday-color);
   padding: 15px 28px;
   font-size: 1.6rem;
   font-weight: 400;
   transform: scale(1);
-  transition: all 0.3s ease-in;
+  transition: all 0.6s ease-in;
 }
-.hero-text button a:hover {
-  transition: all 0.3s ease-in;
+
+.hero-text .response-time:hover {
+  transition: all 0.6s ease-in;
   background-color: var(--primay-color);
   color: var(--grey-shade-light);
   transform: scale(1.05);
@@ -523,7 +524,7 @@ button.hamburger-menu {
 .services-cards:hover .services-cards-slide {
   position: absolute;
   cursor: pointer;
-  transform: translateY(50%);
+  transform: translateY(53%);
   transition: all 0.5s ease-in;
 }
 
@@ -585,9 +586,6 @@ button.hamburger-menu {
   overflow: hidden;
   order: 1;
 }
-/* .select-box .options-container label {
-  background-color: yellow;
-} */
 
 .selected {
   background: var(--primay-color);
@@ -676,7 +674,14 @@ button.hamburger-menu {
   transition: all 0.5s ease-in-out;
   transform: scale(1.1);
 }
-
+.form-input-warning {
+  color: var(--seconday-color);
+  font-weight: 600;
+  font-size: 1.7rem;
+  padding: 15px 0;
+  text-decoration: underline;
+  display: none;
+}
 /* Company Overview */
 
 .company-overview-flex {
@@ -1272,8 +1277,8 @@ footer {
   font-weight: 500;
 }
 .footer-social-media a i {
-  color: var(--seconday-color);
-  font-size: 2.5rem;
+  color: var(--seconday-color) !important;
+  font-size: 2.5rem !important;
 }
 .footer-social-media a i:hover {
   color: var(--grey-shade-light);
