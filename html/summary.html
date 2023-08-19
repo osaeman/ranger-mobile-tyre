@@ -9,14 +9,22 @@
     <meta
       name="keywords"
       content="Ranger Mobile tyre, Tyre Fitting, Tyre Replacement,
-    Emergency Tyre Replacement, Quick Fitting Service, Around The Clock Available, Trained Technicians, On The Spot Tyre Replacement, All Tyre Ranges
-   Mobile Tyre Supply, Bridgestone Tyres, Michelin Tyres, Iirelli Tyres, Goodyear Tyres, 
-    Avon Tyres, Continental Tyres, Yokohama tyres, Dunlop Tyres"
+    Emergency Tyre Replacement, Quick Fitting Service, Around The Clock Available, Trained Technicians, On The Spot Tyre Replacement, 
+    All Tyre Ranges, Mobile Tyre Supply, Bridgestone Tyres, Michelin Tyres, Iirelli Tyres, Goodyear Tyres, Avon Tyres, 
+    Continental Tyres, Yokohama tyres, Dunlop Tyres,Emergency Mobile Tyre Supply & Fitting, Emergency Tyre Fitters Luton, 
+    Emergency Tyre Suppliers, Fleet Tyre Suppliers, Tyre Fitting Bedfordshire, 
+    Tyre Suppliers Hertfordshire, Car Tyre Fitting Buckinghamshire, Mobile Tyre Fitters Luton, Roadside Tyre Replacement,
+    Tyre Replacement Service, Affordable Tyre , Mobile Tyre Fitter, Mobile Fitting, Home Fitting, Tyres At Work, Tyres On The Drive, 83 Solway Road North Luton Bedfordshire, 
+    Mobile Tyre Fitters In Solway Road North Luton Bedfordshire, UK Mobile Tyre Fitting, Trained Mobile Tyre Technicians, Trusted Mobile Tyre Fitters"
     />
     <meta
       name="description"
       content="Ranger Mobile Tyre Service is there to assist you during emergencies, providing a team of skilled tire 
-      fitting professionals who quickly get you back on the road."
+    fitting professionals who quickly get you back on the road."
+    />
+    <meta
+      property="og:title"
+      content="Emergency Mobile Tyre Supply & Fitting - Ranger Mobile Tyre"
     />
     <meta name="author" content="Ranger Mobile Tyre" />
     <meta name="robots" content="index, follow" />
@@ -292,9 +300,13 @@
           <nav>
             <a
               href="https://www.facebook.com/people/Ranger-Mob-Tyre/pfbid0ERscNBXpe1D7TKxdYGu9kjB2pkc5Gpcu1TS7kz2d6DuJkrRyPcUQBXaCQ7j5Jj4el/"
+              aria-label="Facebook Page Link"
               ><i class="fab fa-facebook-f"></i
             ></a>
-            <a href="https://www.instagram.com/rangermobtyre/?utm_source=qr">
+            <a
+              href="https://www.instagram.com/rangermobtyre/?utm_source=qr"
+              aria-label="Instagram Page Link"
+            >
               <i class="fab fa-instagram"></i>
             </a>
           </nav>
@@ -316,9 +328,16 @@
     <script src="../js/script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Checking For Data from Previous Page
         var vehicleData = JSON.parse(localStorage.getItem("vehicleData"));
+        var tyreData = JSON.parse(localStorage.getItem("tyreData"));
+        var locationData = JSON.parse(localStorage.getItem("locationData"));
 
-        if (vehicleData === null) {
+        if (
+          vehicleData === null ||
+          tyreData === null ||
+          locationData === null
+        ) {
           window.location.href = "../index.html";
         }
 
@@ -327,12 +346,8 @@
         );
         const tyreInfoTable = document.querySelector(".tyre-info-table");
         const totalTable = document.querySelector(".total-table");
-        var tyreData = JSON.parse(localStorage.getItem("tyreData"));
-        var locationData = JSON.parse(localStorage.getItem("locationData"));
 
-        var total = JSON.parse(localStorage.getItem("total"));
-
-        var appendLocationData = `<table>
+        personalInfoTable.innerHTML = `<table>
               <tr>
                 <th>Driver Name :</th>
                 <td>${locationData[0].value}</td>
@@ -361,24 +376,20 @@
                 <td>${vehicleData[1].value}</td>
               </tr>
             </table>`;
-        var appendTotalData = `<table>
+        totalTable.innerHTML = `<table>
               <tr>
                 <th>Total:</th>
                 <td>
-                  &#163; ${total}
-                  <p>(&#163; 60 ex VAT)</p>
+                  &#163; ${tyreData[0][7].value}
+                  <p>(&#163; ${tyreData[0][8].value} ex VAT)</p>
                 </td>
               </tr>
             </table>
         `;
-
         tyreInfoTable.innerHTML = `<table>
-  <tr><th>Tyre Quantity :</th>
-    <td>${tyreData.length}</td></tr>
-
-</table>`;
-        personalInfoTable.innerHTML = appendLocationData;
-        totalTable.innerHTML = appendTotalData;
+           <tr><th>Tyre Quantity :</th>
+           <td>${tyreData.length}</td></tr>
+           </table>`;
       });
     </script>
   </body>

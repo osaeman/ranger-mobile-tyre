@@ -9,14 +9,22 @@
     <meta
       name="keywords"
       content="Ranger Mobile tyre, Tyre Fitting, Tyre Replacement,
-    Emergency Tyre Replacement, Quick Fitting Service, Around The Clock Available, Trained Technicians, On The Spot Tyre Replacement, All Tyre Ranges
-   Mobile Tyre Supply, Bridgestone Tyres, Michelin Tyres, Iirelli Tyres, Goodyear Tyres, 
-    Avon Tyres, Continental Tyres, Yokohama tyres, Dunlop Tyres"
+    Emergency Tyre Replacement, Quick Fitting Service, Around The Clock Available, Trained Technicians, On The Spot Tyre Replacement, 
+    All Tyre Ranges, Mobile Tyre Supply, Bridgestone Tyres, Michelin Tyres, Iirelli Tyres, Goodyear Tyres, Avon Tyres, 
+    Continental Tyres, Yokohama tyres, Dunlop Tyres,Emergency Mobile Tyre Supply & Fitting, Emergency Tyre Fitters Luton, 
+    Emergency Tyre Suppliers, Fleet Tyre Suppliers, Tyre Fitting Bedfordshire, 
+    Tyre Suppliers Hertfordshire, Car Tyre Fitting Buckinghamshire, Mobile Tyre Fitters Luton, Roadside Tyre Replacement,
+    Tyre Replacement Service, Affordable Tyre , Mobile Tyre Fitter, Mobile Fitting, Home Fitting, Tyres At Work, Tyres On The Drive, 83 Solway Road North Luton Bedfordshire, 
+    Mobile Tyre Fitters In Solway Road North Luton Bedfordshire, UK Mobile Tyre Fitting, Trained Mobile Tyre Technicians, Trusted Mobile Tyre Fitters"
     />
     <meta
       name="description"
       content="Ranger Mobile Tyre Service is there to assist you during emergencies, providing a team of skilled tire 
-      fitting professionals who quickly get you back on the road."
+    fitting professionals who quickly get you back on the road."
+    />
+    <meta
+      property="og:title"
+      content="Emergency Mobile Tyre Supply & Fitting - Ranger Mobile Tyre"
     />
     <meta name="author" content="Ranger Mobile Tyre" />
     <meta name="robots" content="index, follow" />
@@ -68,7 +76,7 @@
       <div class="mobile-main-header mobile-section-container">
         <div class="mobile-header-logo">
           <a href="./index.html">
-            <img src="../assets/tyre logo 4.png" alt="Company-logo" />
+            <img src="../assets/tyre logo 4.png" alt="Company logo" />
           </a>
         </div>
         <button class="hamburger-menu">
@@ -115,7 +123,7 @@
         <div class="header-container section-container">
           <div class="header-logo">
             <a href="../index.html">
-              <img src="../assets/tyre logo 4.png" alt="Company-logo" />
+              <img src="../assets/tyre logo 4.png" alt="Company logo" />
             </a>
           </div>
           <nav class="navbar-desktop">
@@ -143,64 +151,10 @@
       </p>
 
       <div class="tye-cart-container">
-        <!-- <div class="tyre-in-cart"> -->
-        <!-- <div class="tyre-in-cart-des">
-            <table>
-              <tr>
-                <th>Wheel Position :</th>
-                <td></td>
-                <th>Width :</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Profile :</th>
-                <td></td>
-                <th>Rim :</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Load Index :</th>
-                <td></td>
-                <th>Speed Rating :</th>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Flat :</th>
-                <td></td>
-              </tr>
-            </table>
-          </div>
-          <div class="tyre-availbility">
-            <div class="if-available">
-              <h3>Estimated Price</h3>
-              <b class="price-inc-vat">&#163; 72.00</b>
-              <span class="price-exd-vt">(&#163; 60.00 ex VAT)</span>
-            </div>
-            <div class="if-not-available">
-              Sorry, Tyre with such description is not available.
-            </div>
-          </div> -->
-        <!-- </div> -->
+        <!-- Tyre Selected from the Shop Will be appended here -->
       </div>
       <div class="cart-total">
-        <div class="call-out-charges">
-          <div>
-            <h3>Call Out Charges</h3>
-            <span>&#163; 75 (Plus VAT) between 08:30 am and 16:30 pm</span>
-          </div>
-
-          <div>
-            <b class="price-inc-vat">&#163; 72.00</b>
-            <span class="price-exd-vt">(&#163; 60.00 ex VAT)</span>
-          </div>
-        </div>
-        <div class="total-charges">
-          <div><h3>Total Estimate</h3></div>
-          <div>
-            <b class="price-inc-vat">&#163; 72.00</b>
-            <span class="price-exd-vt">(&#163; 60.00 ex VAT)</span>
-          </div>
-        </div>
+        <!-- Call Out Charges, Tyre Charges and Total Charges Will be Appended here -->
       </div>
 
       <p class="timing-msg">
@@ -210,7 +164,7 @@
       </p>
 
       <div class="other-details-form-btns">
-        <button><a href="./shop.html">Return</a></button>
+        <button type="button"><a href="./shop.html">Return</a></button>
         <button type="button">
           <a href="./location.html">Confirm</a>
         </button>
@@ -279,9 +233,13 @@
           <nav>
             <a
               href="https://www.facebook.com/people/Ranger-Mob-Tyre/pfbid0ERscNBXpe1D7TKxdYGu9kjB2pkc5Gpcu1TS7kz2d6DuJkrRyPcUQBXaCQ7j5Jj4el/"
+              aria-label="Facebook Page Link"
               ><i class="fab fa-facebook-f"></i
             ></a>
-            <a href="https://www.instagram.com/rangermobtyre/?utm_source=qr">
+            <a
+              href="https://www.instagram.com/rangermobtyre/?utm_source=qr"
+              aria-label="Instagram Page Link"
+            >
               <i class="fab fa-instagram"></i>
             </a>
           </nav>
@@ -313,12 +271,13 @@
         var appendingTyreContainer = document.querySelector(
           ".tye-cart-container"
         );
-        var total = 73;
-        var cartTotal = document.querySelector(".cart-total");
-        var callOutCharges = 73;
+
+        const cartTotal = document.querySelector(".cart-total");
+
         var jsonData = localStorage.getItem("tyreData");
         var data = JSON.parse(jsonData);
         var appendTyreData;
+        var appendTotalPrice;
 
         tyreData.forEach((element) => {
           appendTyreData = `
@@ -353,8 +312,8 @@
             <div class="tyre-availbility">
             <div class="if-available">
               <h3>Estimated Price</h3>
-              <b class="price-inc-vat">&#163; 72.00</b>
-              <span class="price-exd-vt">(&#163; 60.00 ex VAT)</span>
+              <b class="price-inc-vat">&#163; ${element[7].value}</b>
+              <span class="price-exd-vt">(&#163; ${element[8].values} ex VAT)</span>
             </div>
             <div class="if-not-available">
               Sorry, Tyre with such description is not available.
@@ -362,39 +321,28 @@
           </div>
           </div>`;
 
-          appendingTyreContainer.insertAdjacentHTML(
-            "beforeend",
-            appendTyreData
-          );
-        });
-
-        var appendTotalPrice = `     <div class="call-out-charges">
+          appendTotalPrice = `<div class="call-out-charges">
           <div>
             <h3>Call Out Charges</h3>
             <span>£75 (plus VAT) between 08:30 am and 16:30 pm</span>
           </div>
 
           <div>
-            <b class="price-inc-vat">&#163; ${callOutCharges}</b>
-            <span class="price-exd-vt">(&#163; ${
-              callOutCharges - 13
-            } ex VAT)</span>
+            <b class="price-inc-vat">&#163; ${element[7].value}</b>
+            <span class="price-exd-vt">(&#163; ${element[8].value} ex VAT)</span>
           </div>
         </div>
         <div class="total-charges">
           <div><h3>Total Estimate</h3></div>
           <div>
-            <b class="price-inc-vat">&#163; ${total}</b>
-            <span class="price-exd-vt">(&#163; ${total - 13} ex VAT)</span>
+            <b class="price-inc-vat">&#163; ${element[7].value}</b>
+            <span class="price-exd-vt">(&#163; ${element[8].value} ex VAT)</span>
           </div>
         </div>`;
+        });
 
-        cartTotal.innerHTML = appendTotalPrice;
-        var totalData = JSON.stringify(total);
-        console.log(total);
-        console.log(totalData);
-        // Store the data in local storage
-        localStorage.setItem("total", totalData);
+        appendingTyreContainer.insertAdjacentHTML("beforeend", appendTyreData);
+        cartTotal.insertAdjacentHTML("beforeend", appendTotalPrice);
       });
     </script>
   </body>

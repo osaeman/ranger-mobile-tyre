@@ -81,9 +81,6 @@ a {
   right: 0;
   top: 0;
   bottom: 0;
-  /* background-color: rgba(102, 51, 153, 0.2); */
-  /* background-color: rgba(198, 47, 45, 0.2); */
-  /* background-color: rgba(27, 36, 43, 0.5); */
   background: linear-gradient(
     0deg,
     rgba(27, 36, 43, 0.9) 14%,
@@ -189,7 +186,6 @@ header {
   justify-content: space-around;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
-  /* background-color: var(--primay-color); */
   text-transform: uppercase;
   color: white;
   position: absolute;
@@ -718,47 +714,11 @@ button.hamburger-menu {
 .company-overview-flex-right-content h2 {
   transform: translateX(0);
   font-size: 3rem;
-  line-height: 35px;
+  line-height: 37px;
   text-align: right;
   width: 40%;
-  /* -ms-animation-name: slideInLeft;
-  -moz-animation-name: slideInLeft;
-  -op-animation-name: slideInLeft;
-  -webkit-animation-name: slideInLeft;
-  animation-name: slideInLeft;
-  -ms-animation-duration: 1000ms;
-  -moz-animation-duration: 1000ms;
-  -op-animation-duration: 1000ms;
-  -webkit-animation-duration: 1000ms;
-  animation-duration: 1000ms;
-  -ms-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -op-animation-timing-function: linear;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -ms-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -op-animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1; */
 }
-/* @keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  25% {
-    transform: translateX(-50%);
-  }
-  50% {
-    transform: translateX(-25%);
-  }
-  75% {
-    transform: translateX(-10);
-  }
-  100% {
-    transform: translateX(0);
-  }
-} */
+
 .company-overview-flex-right-content h2 span {
   display: block;
 }
@@ -775,128 +735,6 @@ button.hamburger-menu {
   align-items: flex-start;
   margin: 5px 0 18px 0;
 }
-/* .company-overview-flex-right-content div span:first-child {
-  transform: translateX(0);
-  -ms-animation-name: slideInRight;
-  -moz-animation-name: slideInRight;
-  -op-animation-name: slideInRight;
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight;
-  -ms-animation-duration: 1000ms;
-  -moz-animation-duration: 1000ms;
-  -op-animation-duration: 1000ms;
-  -webkit-animation-duration: 1000ms;
-  animation-duration: 1000ms;
-  -ms-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -op-animation-timing-function: linear;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -ms-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -op-animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-} */
-/* .company-overview-flex-right-content div span:nth-child(2) {
-  transform: translateX(0);
-  -ms-animation-name: slideInRight2;
-  -moz-animation-name: slideInRight2;
-  -op-animation-name: slideInRight2;
-  -webkit-animation-name: slideInRight2;
-  animation-name: slideInRight2;
-  -ms-animation-duration: 1200ms;
-  -moz-animation-duration: 1200ms;
-  -op-animation-duration: 1200ms;
-  -webkit-animation-duration: 1200ms;
-  animation-duration: 1200ms;
-  -ms-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -op-animation-timing-function: linear;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -ms-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -op-animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-} */
-/* .company-overview-flex-right-content div span:nth-child(3) {
-  color: #337ab7;
-  transform: translateX(0);
-  -ms-animation-name: slideInRight3;
-  -moz-animation-name: slideInRight3;
-  -op-animation-name: slideInRight3;
-  -webkit-animation-name: slideInRight3;
-  animation-name: slideInRight3;
-  -ms-animation-duration: 1400ms;
-  -moz-animation-duration: 1400ms;
-  -op-animation-duration: 1400ms;
-  -webkit-animation-duration: 1400ms;
-  animation-duration: 1400ms;
-  -ms-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -op-animation-timing-function: linear;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -ms-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-  -op-animation-iteration-count: 1;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-} */
-
-/* @keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-  }
-  25% {
-    transform: translateX(50%);
-  }
-  50% {
-    transform: translateX(25%);
-  }
-  75% {
-    transform: translateX(10);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideInRight2 {
-  0% {
-    transform: translateX(-00%);
-  }
-  25% {
-    transform: translateX(50%);
-  }
-  50% {
-    transform: translateX(-5%);
-  }
-  75% {
-    transform: translateX(10);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideInRight3 {
-  0% {
-    transform: translateX(100%);
-  }
-  25% {
-    transform: translateX(50%);
-  }
-  50% {
-    transform: translateX(25%);
-  }
-  75% {
-    transform: translateX(10);
-  }
-  100% {
-    transform: translateX(0);
-  }
-} */
 
 .company-overview-flex-right-content div span p {
   padding-left: 15px;
@@ -907,7 +745,9 @@ button.hamburger-menu {
   outline: none;
   border: none;
   background: none;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-left: 30px;
+  display: block;
 }
 
 .company-overview-flex-right-content button a {
@@ -1054,7 +894,7 @@ button.hamburger-menu {
 /* Brands Available Section */
 .brands-available-section {
   width: 100%;
-  background-image: url(../assets/premium_photo-1675264751174-8e07baa5542d.jpeg);
+  background-image: url(../assets/brands-background-img.jpeg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1354,7 +1194,7 @@ footer hr {
   }
 }
 
-/* ----------------------------------Contact Us Page ----------------------------- */
+/* -------------Contact Us Page ------------------ */
 /* Contact Us Page Hero Section */
 .contact-us-hero-section {
   position: relative;
@@ -1368,7 +1208,6 @@ footer hr {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: rgba(30, 33, 38, 0.5); */
   background: radial-gradient(
     circle,
     rgba(198, 47, 45, 0.1) 14%,
@@ -1592,7 +1431,6 @@ footer hr {
   padding-bottom: 2px !important;
   color: #525861;
 }
-
 .privacy-policy-section ol {
   font-size: 1.9rem;
   font-weight: 500;
@@ -1616,9 +1454,11 @@ footer hr {
   padding-bottom: 8px !important;
   color: #525861;
 }
+.privacy-policy-section ol li ul li span {
+  color: var(--seconday-color);
+}
 /* ---------------------Shop Page------------------------ */
 /* Specify Details Section */
-
 .specify-details-section {
   padding: 100px 0;
 }
@@ -1831,21 +1671,18 @@ input:checked + .slider:before {
 
 .specify-details-section-gridbox-right {
   grid-column: 4 / span 2;
-  /* background-color: var(--seconday-color);
-  padding: 20px; */
 }
 .specify-details-section-gridbox-right div img {
   border-top: 20px solid var(--primay-color);
   border-bottom: 20px solid var(--primay-color);
 }
 
-/* Loaction Info Page */
+/* Location Info Page */
 /* Vehicle Info Page */
-
 .other-details-section {
   position: relative;
   width: 100%;
-  background-image: url(../assets/13153711_1602.m10.i311.n057.P.c20.306591797\ Tire\ tracks\ with\ grunge\ texture.\ Vector\ set.jpg);
+  background-image: url(../assets/tyre\ tracks.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1972,11 +1809,11 @@ input:checked + .slider:before {
 /* Order Completion page */
 .order-complete-status {
   text-align: left !important;
-  margin-top: 60px;
-  font-size: 2rem;
+  padding: 60px 0;
+  font-size: 1.8rem;
 }
 .order-complete-status h5 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin-bottom: 10px;
 }
 

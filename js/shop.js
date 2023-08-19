@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Checking status of Checkbox
   var check = "no";
 
   document.getElementById("flat").addEventListener("change", () => {
@@ -97,10 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
   
   </form>`;
     removeTyreBtn.style.display = "block";
-    // appendingContainer.appendChild(appendData);
+
     appendingContainer.insertAdjacentHTML("beforeend", appendData);
   }
-
+  // Remove Tyre Button Functionality
   removeTyreBtn.addEventListener("click", () => {
     var lastChild = appendingContainer.lastElementChild;
     appendingContainer.removeChild(lastChild);
@@ -109,8 +110,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  document.querySelector(".view-price-btn").addEventListener("click", (e) => {
+  // Form Data Handling and Redirection
+  const view_price_btn = document.querySelector(".view-price-btn");
+  view_price_btn.addEventListener("click", (e) => {
     e.preventDefault();
+
+    // Curent Time Fetching
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var price;
+
+    hours >= 8 && hours <= 16 ? (price = 72) : (price = 162);
+    var exvat = Math.round(price - 16.7 / 100);
 
     var wheelPosition = document.getElementsByName("wheelPosition");
     var width = document.getElementsByName("width");
@@ -131,6 +142,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { key: "loadIndex", value: loadIndex[index].value },
         { key: "speedRating", value: speedRating[index].value },
         { key: "flat", value: check },
+        { key: "price", value: price },
+        { key: "exvat", value: exvat },
       ];
 
       mainArray.push(data);

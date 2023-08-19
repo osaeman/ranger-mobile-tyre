@@ -190,9 +190,14 @@
     width: 100%;
     text-align: center;
     margin-bottom: 15px;
+    font-size: 2.7rem;
+    line-height: 32px;
   }
   .company-overview-flex-right-content div {
     padding-left: 0;
+  }
+  .company-overview-flex-right-content button {
+    margin: 40px auto 0 auto;
   }
   .steps-getting-back-section h2 {
     font-size: 4rem;
