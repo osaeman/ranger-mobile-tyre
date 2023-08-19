@@ -553,7 +553,7 @@
       <section class="call-us-at-section">
         <div class="call-us-at-section-grid section-container">
           <div class="call-us-at-section-left">
-            <img src="./assets/red-audi" alt="Red Car" />
+            <img src="./assets/red-audi.png" alt="Red Car" />
           </div>
           <div class="call-us-at-section-right">
             <h3>In Emergency? Contact Us...</h3>
@@ -707,6 +707,15 @@
           selected[1].innerHTML != "Select an Option"
         ) {
           form_input_warning.style.display = "none";
+
+          var data = [
+            { key: "type", value: selected[0].innerHTML },
+            { key: "range", value: selected[1].innerHTML },
+          ];
+
+          var jsonData = JSON.stringify(data);
+
+          localStorage.setItem("primaryData", jsonData);
           window.location.href = "./html/shop.html";
         } else {
           form_input_warning.style.display = "block";

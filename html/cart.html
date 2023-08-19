@@ -316,7 +316,7 @@
               <span class="price-exd-vt">(&#163; ${element[8].values} ex VAT)</span>
             </div>
             <div class="if-not-available">
-              Sorry, Tyre with such description is not available.
+              Sorry, Tyre with such description is not available. Please contact us for assistance.
             </div>
           </div>
           </div>`;
@@ -339,9 +339,12 @@
             <span class="price-exd-vt">(&#163; ${element[8].value} ex VAT)</span>
           </div>
         </div>`;
+          appendingTyreContainer.insertAdjacentHTML(
+            "beforeend",
+            appendTyreData
+          );
         });
 
-        appendingTyreContainer.insertAdjacentHTML("beforeend", appendTyreData);
         cartTotal.insertAdjacentHTML("beforeend", appendTotalPrice);
       });
     </script>

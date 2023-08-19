@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Check
+  var primaryData = JSON.parse(localStorage.getItem("primaryData"));
+  if (primaryData === null) {
+    window.location.href = "../index.html";
+  }
+
   // Checking status of Checkbox
   var check = "no";
 
@@ -74,8 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
           required
           id="rim"
           name="rim"
-          max="126"
-          min="62"
+          min = "1"
         />
      
       </div>
@@ -101,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     appendingContainer.insertAdjacentHTML("beforeend", appendData);
   }
+
   // Remove Tyre Button Functionality
   removeTyreBtn.addEventListener("click", () => {
     var lastChild = appendingContainer.lastElementChild;
@@ -111,9 +117,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Form Data Handling and Redirection
-  const view_price_btn = document.querySelector(".view-price-btn");
+  var view_price_btn = document.querySelector(".view-price-btn");
   view_price_btn.addEventListener("click", (e) => {
     e.preventDefault();
+    var wheelPosition = document.getElementsByName("wheelPosition");
+    var width = document.getElementsByName("width");
+    var profile = document.getElementsByName("profile");
+    var rim = document.getElementsByName("rim");
+    var loadIndex = document.getElementsByName("loadIndex");
+    var speedRating = document.getElementsByName("speedRating");
+    var specify = document.querySelectorAll(".specify-details-form");
+    var form_input_warning = document.querySelector(".form-input-warning");
 
     // Curent Time Fetching
     var currentTime = new Date();
@@ -123,16 +137,10 @@ document.addEventListener("DOMContentLoaded", function () {
     hours >= 8 && hours <= 16 ? (price = 72) : (price = 162);
     var exvat = Math.round(price - 16.7 / 100);
 
-    var wheelPosition = document.getElementsByName("wheelPosition");
-    var width = document.getElementsByName("width");
-    var profile = document.getElementsByName("profile");
-    var rim = document.getElementsByName("rim");
-    var loadIndex = document.getElementsByName("loadIndex");
-    var speedRating = document.getElementsByName("speedRating");
-    var specify = document.querySelectorAll(".specify-details-form");
-
     var data;
     var mainArray = [];
+    var status = true;
+
     specify.forEach((item, index) => {
       data = [
         { key: "wheelPosition", value: wheelPosition[index].value },
@@ -148,9 +156,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
       mainArray.push(data);
     });
-    var jsonData = JSON.stringify(mainArray);
 
+    var jsonData = JSON.stringify(mainArray);
     localStorage.setItem(`tyreData`, jsonData);
-    window.location.href = "./cart.html";
+    mainArray.forEach((item) => {
+      item.forEach((ele) => {
+        if (ele.value === "" || null || undefined) {
+          form_input_warning.style.display = "block";
+          status = false;
+        }
+      });
+    });
+
+    if (status === true) {
+      var jsonData = JSON.stringify(mainArray);
+      localStorage.setItem(`tyreData`, jsonData);
+      window.location.href = "./cart.html";
+    }
   });
 });

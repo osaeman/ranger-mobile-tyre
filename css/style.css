@@ -2215,8 +2215,11 @@ input:checked + .slider:before {
 }
 .if-not-available {
   /* display: none; */
-  color: var(--seconday-color);
-  font-size: 1.8rem;
+  color: var(--grey-shade-light);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--seconday-color);
+  font-size: 1.6rem;
 }
 .cart-total {
   display: grid;
