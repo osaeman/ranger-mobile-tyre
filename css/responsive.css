@@ -455,4 +455,20 @@
     border-top: 1px solid var(--grey-shade-light);
     text-align: center;
   }
+  .swiper-slide p {
+    padding: 20px 0 10px 0;
+  }
+  .swiper-slide {
+    padding: 20px 20px;
+  }
+  .swiper-pagination-bullet {
+    width: var(
+      --swiper-pagination-bullet-width,
+      var(--swiper-pagination-bullet-size, 8px)
+    );
+    height: var(
+      --swiper-pagination-bullet-height,
+      var(--swiper-pagination-bullet-size, 8px)
+    );
+  }
 }

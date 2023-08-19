@@ -1106,7 +1106,89 @@ button.hamburger-menu {
   height: 100px;
   border-radius: 5px;
 }
+/* Testimonial Section */
+.testimonial-section {
+  margin: 60px auto 60px auto;
+}
+.testimonial-section h4 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #747170;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.testimonial-section h2 {
+  text-align: center;
+  font-size: 4.2rem;
+  font-weight: 300;
+  margin: 10px 0 40px 0;
+  text-transform: uppercase;
+}
 
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  padding: 10px 0 60px 0;
+}
+.swiper-slide {
+  text-align: center;
+  background-color: #0d141f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 20px 40px;
+  position: relative;
+}
+.swiper-slide div div {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--grey-shade-light);
+  margin: 0 auto;
+}
+.swiper-slide div img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  object-position: center;
+}
+.swiper-slide p {
+  font-size: 1.9rem;
+  line-height: 25px;
+  color: var(--grey-shade-light);
+  text-align: center;
+  padding: 30px 0 30px 0;
+}
+.swiper-slide h3 {
+  font-size: 2.2rem;
+  color: var(--grey-shade-light);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--seconday-color);
+}
+.swiper-pagination {
+  top: 95% !important;
+}
+.swiper-pagination-bullet {
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 12px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 12px)
+  );
+}
 /* Footer */
 footer {
   background-color: var(--primary-shade-1);
@@ -1189,7 +1271,14 @@ footer {
   font-size: 1.6rem;
   font-weight: 500;
 }
-
+.footer-social-media a i {
+  color: var(--seconday-color);
+  font-size: 2.5rem;
+}
+.footer-social-media a i:hover {
+  color: var(--grey-shade-light);
+  font-size: 2.5rem;
+}
 footer hr {
   width: 100%;
   height: 0.6px;
@@ -2234,7 +2323,7 @@ input:checked + .slider:before {
   color: var(--seconday-color);
 }
 .tye-cart-container {
-  margin: 30px 0;
+  margin: 30px auto;
 }
 .tyre-in-cart {
   background-color: var(--primay-color);

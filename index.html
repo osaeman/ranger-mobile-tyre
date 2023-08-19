@@ -35,6 +35,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Swiper Js cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
     <!-- Font Awesome Icon -->
     <link
       rel="stylesheet"
@@ -398,7 +403,106 @@
         <div><img src="./assets/dunlop.png" alt="" /></div>
       </div>
     </section>
-    <!-- Call Us At Secton -->
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section section-container">
+      <h4>Testimonials</h4>
+      <h2>Testimonials</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div>
+              <div><img src="./assets/male-avatar.png" alt="" /></div>
+
+              <p>
+                Rapid responsiveness, exemplary customer service, strongly
+                recommended, and a certain prospect for future engagements.
+                Gratitude for the invaluable assistance provided today is
+                extended.
+              </p>
+            </div>
+
+            <h3>Leo</h3>
+          </div>
+          <div class="swiper-slide">
+            <div>
+              <div>
+                <img src="./assets/woman-avatar.png" alt="" />
+              </div>
+
+              <p>
+                Amidst an urgent situation requiring prompt tire replacement,
+                Ranger Mobile Tyre promptly responded within half an hour,
+                swiftly and effectively providing their service. Their rapid and
+                proficient assistance during our critical moment is greatly
+                appreciated.
+              </p>
+            </div>
+
+            <h3>Ivy</h3>
+          </div>
+          <div class="swiper-slide">
+            <div>
+              <div><img src="./assets/male-avatar.png" alt="" /></div>
+
+              <p>
+                Superb service, the team that attended to my vehicle performed
+                exceptionally well in rotating the tires and installing new
+                ones. My driving experience now feels akin to having a brand-new
+                car.
+              </p>
+            </div>
+            <h3>Carew</h3>
+          </div>
+          <div class="swiper-slide">
+            <div>
+              <div><img src="./assets/male-avatar.png" alt="" /></div>
+
+              <p>
+                During a crucial time when we needed a tire changed urgently,
+                Ranger Mobile Tyre showed impressive speed and professionalism
+                by arriving in just 30 minutes. Their quick and effective help
+                when we needed it most was truly outstanding. We're very
+                thankful for their invaluable assistance.
+              </p>
+            </div>
+
+            <h3>Oliver</h3>
+          </div>
+          <div class="swiper-slide">
+            <div>
+              <div><img src="./assets/woman-avatar.png" alt="" /></div>
+
+              <p>
+                After a car tire blew on a single carriageway and disappointing
+                RAC assistance, I contacted Ranger Mobile Tyre. Their rapid,
+                professional service fixed my car in under 90 minutes. Highly
+                satisfied and recommended due to competitive pricing.
+              </p>
+            </div>
+
+            <h3>Isla</h3>
+          </div>
+          <div class="swiper-slide">
+            <div>
+              <div><img src="./assets/male-avatar.png" alt="" /></div>
+
+              <p>
+                When we had a sudden problem with a tire, we asked Ranger Mobile
+                Tyre for help. They quickly and efficiently replaced the tire in
+                just 30 minutes, showing how much they care about making
+                customers happy. We're really thankful for their quick help when
+                we needed it most.
+              </p>
+            </div>
+
+            <h3>Cillian</h3>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- Call Us At Section -->
     <section class="call-us-at-section">
       <div class="call-us-at-section-grid section-container">
         <div class="call-us-at-section-left">
@@ -472,6 +576,19 @@
             <a href="./html/righttobeforgotten.html">Right to be Forgotten</a>
           </nav>
         </div>
+
+        <div class="footer-legal-links footer-social-media section-container">
+          <h2>Follow us at</h2>
+          <nav>
+            <a
+              href="https://www.facebook.com/people/Ranger-Mob-Tyre/pfbid0ERscNBXpe1D7TKxdYGu9kjB2pkc5Gpcu1TS7kz2d6DuJkrRyPcUQBXaCQ7j5Jj4el/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com/rangermobtyre/?utm_source=qr">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </nav>
+        </div>
       </div>
       <hr />
       <div class="footer-copyright section-container">
@@ -488,7 +605,20 @@
       <i class="far fa-long-arrow-alt-up"></i>
     </div>
     <script src="./js/script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
     <script>
+      //  <Initialize Swiper
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
       // Program For Radio Inputs
       const selected = document.querySelectorAll(".selected");
       const optionsContainer = document.querySelectorAll(".options-container");
