@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Check
+  // Page Check
   var primaryData = JSON.parse(localStorage.getItem("primaryData"));
   if (primaryData === null) {
     window.location.href = "../index.html";
   }
-
+  var tyre_quantity = 1;
   // Checking status of Checkbox
   var check = "no";
 
@@ -17,12 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const appendingContainer = document.querySelector(
     ".specify-detail-forms-container"
   );
-  const addMoreBtn = document.querySelectorAll(".add-more-btn");
+  const addMoreBtn = document.querySelector(".add-more-btn");
   const removeTyreBtn = document.querySelector(".remove-tyre-btn");
-  addMoreBtn.forEach((item, index) => {
-    item.addEventListener("click", clickAppend);
-  });
-  function clickAppend() {
+
+  addMoreBtn.addEventListener("click", () => {
+    tyre_quantity += 1;
     var appendData = `  <form  class="specify-details-form">
     <h5>Specify Tyre Details</h5>
     <div class="specify-details-form-part-1">
@@ -105,14 +104,25 @@ document.addEventListener("DOMContentLoaded", function () {
     removeTyreBtn.style.display = "block";
 
     appendingContainer.insertAdjacentHTML("beforeend", appendData);
-  }
 
+    if (tyre_quantity === 4) {
+      addMoreBtn.disabled = true;
+    } else {
+      addMoreBtn.disabled = false;
+    }
+  });
   // Remove Tyre Button Functionality
   removeTyreBtn.addEventListener("click", () => {
     var lastChild = appendingContainer.lastElementChild;
     appendingContainer.removeChild(lastChild);
     if (appendingContainer.children.length === 1) {
       removeTyreBtn.style.display = "none";
+    }
+    tyre_quantity -= 1;
+    if (tyre_quantity === 4) {
+      addMoreBtn.disabled = true;
+    } else {
+      addMoreBtn.disabled = false;
     }
   });
 
@@ -133,14 +143,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var currentTime = new Date();
     var hours = currentTime.getHours();
     var price;
-
-    hours >= 8 && hours <= 16 ? (price = 72) : (price = 162);
-    var exvat = Math.round(price - 16.7 / 100);
-
+    var exvat;
     var data;
     var mainArray = [];
     var status = true;
 
+    hours >= 8 && hours <= 16 ? (price = 72) : (price = 162);
+    exvat = Math.round(price - (16.666 / 100) * price);
     specify.forEach((item, index) => {
       data = [
         { key: "wheelPosition", value: wheelPosition[index].value },

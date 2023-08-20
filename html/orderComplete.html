@@ -166,7 +166,7 @@
         </div>
 
         <div class="order-complete-status">
-          <h5>Order Complete</h5>
+          <h5 class="complete">Order Complete</h5>
           <p>
             Thank you for your order. We have successfully received it. You can
             expect a response shortly.
@@ -266,8 +266,14 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var vehicleData = JSON.parse(localStorage.getItem("vehicleData"));
-
-        if (vehicleData === null) {
+        var tyreData = JSON.parse(localStorage.getItem("tyreData"));
+        var locationData = JSON.parse(localStorage.getItem("locationData"));
+        var primaryData = JSON.parse(localStorage.getItem("primaryData"));
+        if (
+          vehicleData === null ||
+          tyreData === null ||
+          locationData === null
+        ) {
           window.location.href = "../index.html";
         } else {
           localStorage.clear();

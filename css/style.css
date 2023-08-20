@@ -1655,6 +1655,10 @@ input:checked + .slider:before {
   cursor: pointer;
   margin-right: 20px;
 }
+.add-more-btn:disabled {
+  opacity: 0.5;
+  cursor: none;
+}
 
 .remove-tyre-btn {
   outline: none;
@@ -1682,7 +1686,7 @@ input:checked + .slider:before {
 .other-details-section {
   position: relative;
   width: 100%;
-  background-image: url(../assets/tyre\ tracks.jpg);
+  background-image: url(../assets/13153711_1602.m10.i311.n057.P.c20.306591797\ Tire\ tracks\ with\ grunge\ texture.\ Vector\ set.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

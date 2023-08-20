@@ -230,8 +230,8 @@
 
           <div class="other-details-form-btns">
             <button><a href="./vehicle.html">Return</a></button>
-            <button type="button">
-              <a href="./orderComplete.html">Confirm</a>
+            <button type="button" class="confirm">
+              <a>Confirm</a>
             </button>
           </div>
         </div>
@@ -332,7 +332,7 @@
         var vehicleData = JSON.parse(localStorage.getItem("vehicleData"));
         var tyreData = JSON.parse(localStorage.getItem("tyreData"));
         var locationData = JSON.parse(localStorage.getItem("locationData"));
-
+        var primaryData = JSON.parse(localStorage.getItem("primaryData"));
         if (
           vehicleData === null ||
           tyreData === null ||
@@ -390,6 +390,52 @@
            <tr><th>Tyre Quantity :</th>
            <td> 0 </td></tr>
            </table>`;
+
+        const scriptURL =
+          "https://script.google.com/macros/s/AKfycbwhDefNNra20UDfqCbEjpXh_gPnVq0Lkpa2XvCoru-DvLZyOl_1ek0F2nRbmwWBDqlJ/exec";
+        const confirm = document.querySelector(".confirm");
+        confirm.addEventListener("click", (e) => {
+          e.preventDefault();
+          const formData = new FormData();
+          formData.append("type", primaryData[0].value);
+          formData.append("range", primaryData[1].value);
+          formData.append("name", locationData[0].value);
+          formData.append("email", locationData[1].value);
+          formData.append("number", locationData[2].value);
+          formData.append("location", locationData[3].value);
+          formData.append("model", vehicleData[0].value);
+          formData.append("registration", vehicleData[1].value);
+
+          tyreData.forEach((element, index) => {
+            formData.append(`wheelPosition${index}`, element[0].value);
+            formData.append(`width${index}`, element[1].value);
+            formData.append(`profile${index}`, element[2].value);
+            formData.append(`rim${index}`, element[3].value);
+            formData.append(`load${index}`, element[4].value);
+            formData.append(`speed${index}`, element[5].value);
+            formData.append(`flat${index}`, element[6].value);
+            formData.append(`price${index}`, element[7].value);
+            formData.append(`vat${index}`, element[8].value);
+          });
+
+          fetch(scriptURL, {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                return response.json(); // Use .text() for plain text response
+              } else {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+            })
+            .then((responseData) => {
+              window.location.href = "./orderComplete.html";
+            })
+            .catch((error) => {
+              alert("An error occurred. Please try again later.");
+            });
+        });
       });
     </script>
   </body>
