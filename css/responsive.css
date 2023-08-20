@@ -151,7 +151,7 @@
     transform: translateY(0);
     z-index: 5;
     height: max-content;
-    padding: 20px 30px 20px 30px;
+    padding: 20px;
     transition: none;
   }
   .services-cards:hover .services-cards-slide {
@@ -189,7 +189,7 @@
   .company-overview-flex-right-content h2 {
     width: 100%;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-size: 2.7rem;
     line-height: 32px;
   }
@@ -201,6 +201,9 @@
   }
   .steps-getting-back-section h2 {
     font-size: 4rem;
+  }
+  .brands-available-section {
+    text-align: center;
   }
   .brand-collection {
     grid-template-columns: repeat(2, 1fr);
@@ -294,22 +297,30 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .other-details-section-container {
-    padding: 30px 20px;
+    padding: 50px 20px 20px 20px;
   }
   .other-details-form-btns {
     flex-direction: column-reverse;
   }
-
+  .other-details-form-btns button {
+    margin-right: 0;
+  }
   .summary-section {
-    padding: 30px 20px;
+    padding: 30px 20px 0 20px;
   }
   .summary-section div table tr th {
-    width: 200px;
+    width: 250px;
   }
   .cart-total {
     grid-template-columns: repeat(1, 1fr);
     column-gap: 0;
     row-gap: 20px;
+  }
+  .get-started-section div h3 {
+    text-align: center;
+  }
+  .get-started-section div form button[type="submit"] {
+    margin: 0 auto;
   }
 }
 /* Media Query 576px */
@@ -342,7 +353,7 @@
     transition: none;
   }
   .services-offering-flexbox {
-    row-gap: 150px;
+    row-gap: 130px;
   }
   .steps-getting-back-section-grid {
     grid-template-columns: repeat(1, 1fr);
@@ -442,13 +453,8 @@
     border-right: none;
   }
   .summary-section div table tr th {
-    width: max-content;
-    padding-right: 10px;
+    width: 140px;
   }
-  /* .tyre-info-table table tr th {
-    width: fit-content !important;
-    padding-right: 10px;
-  } */
 
   .tyre-availbility {
     width: 25%;
@@ -485,5 +491,12 @@
       --swiper-pagination-bullet-height,
       var(--swiper-pagination-bullet-size, 8px)
     );
+  }
+  .order-complete-status {
+    text-align: center;
+    padding: 40px 15px 17px 15px;
+  }
+  .company-overview-flex-right {
+    padding: 35px 0;
   }
 }
