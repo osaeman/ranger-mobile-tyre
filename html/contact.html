@@ -169,7 +169,7 @@
       <div class="contact-us-section-grid">
         <div class="contact-us-section-form">
           <h2>Get In Touch</h2>
-          <form action="">
+          <form method="post" name="google-sheet">
             <div>
               <span>
                 <label for="name">Full Name <span>*</span></label>
@@ -190,7 +190,7 @@
               placeholder="Message"
             ></textarea>
             <br />
-            <button type="button"><a href="../index.html">Submit</a></button>
+            <button type="submit">Submit</button>
           </form>
         </div>
         <div class="contact-us-section-grid-right">
@@ -310,5 +310,36 @@
       <i class="far fa-long-arrow-alt-up"></i>
     </div>
     <script src="../js/script.js"></script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycby-wzvc5TB6be7HLRrj6Hi1lDQUkO1TQJS0VK7nZL6JWVdVeH0CJ0lr1TLtCH-6D-9u/exec";
+      const form = document.forms["google-sheet"];
+      console.log(form);
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(new FormData(form));
+        fetch(scriptURL, {
+          method: "POST",
+          body: new FormData(form),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json(); // Use .text() for plain text response
+            } else {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+          })
+          .then((responseData) => {
+            // Process responseData here
+            console.log("Response data:", responseData);
+            alert("Thanks for Contacting us..! We Will Contact You Soon...");
+          })
+          .catch((error) => {
+            console.error("Error:", error.message);
+            alert("An error occurred. Please try again later.");
+          });
+      });
+    </script>
   </body>
 </html>
